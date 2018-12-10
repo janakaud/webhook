@@ -1,0 +1,88 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "2f682e63-17e8-4f79-9c2b-bbb18d6e2fdb": {
+        "id": "2f682e63-17e8-4f79-9c2b-bbb18d6e2fdb",
+        "parent": null,
+        "name": "webhook",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "3e815462-2495-4bed-aa6d-7eb73310ce7c"
+        ],
+        "isRemovable": false,
+        "filePath": "webhook"
+      },
+      "3e815462-2495-4bed-aa6d-7eb73310ce7c": {
+        "id": "3e815462-2495-4bed-aa6d-7eb73310ce7c",
+        "parent": "2f682e63-17e8-4f79-9c2b-bbb18d6e2fdb",
+        "name": "function.js",
+        "type": "LAMBDA_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "webhook/function.js",
+        "code": "exports.handler = function(request, response) {\n    \n    response.send({\"message\": \"Successfully executed\"});\n}",
+        "triggers": [
+          {
+            "resourceName": "http-trigger",
+            "config": {}
+          }
+        ],
+        "config": {
+          "runtime": "nodejs8.10",
+          "timeout": 60,
+          "memory": 128,
+          "triggerType": 0
+        }
+      },
+      "4c4460a8-c54b-4a88-a293-fe0a4133e5f2": {
+        "id": "4c4460a8-c54b-4a88-a293-fe0a4133e5f2",
+        "parent": null,
+        "name": "index.js",
+        "type": "JS_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": false,
+        "filePath": "index.js",
+        "code": "// This file is used to register all your cloud functions in GCP.\n// DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\nexports.webhookfunction = require(\"./webhook/function.js\").handler;",
+        "triggers": []
+      }
+    },
+    "deletedFiles": [],
+    "rootNode": "2f682e63-17e8-4f79-9c2b-bbb18d6e2fdb",
+    "openFiles": [
+      "3e815462-2495-4bed-aa6d-7eb73310ce7c"
+    ],
+    "currentFileId": "3e815462-2495-4bed-aa6d-7eb73310ce7c",
+    "resources": {
+      "http-trigger": {
+        "name": "http-trigger",
+        "type": "http-trigger",
+        "config": {},
+        "globallyEditable": false
+      }
+    },
+    "envVariables": [],
+    "packageJSON": {
+      "dependencies": {}
+    },
+    "lambdaId": "3e815462-2495-4bed-aa6d-7eb73310ce7c"
+  },
+  "PROJECT_META": {
+    "projectName": "webhook",
+    "projectDescription": "my first webhook",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east1",
+    "platform": "GCP",
+    "platformRegions": {},
+    "lastSave": 1544413984053
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "webhook",
+      "url": "https://github.com/janakaud/webhook"
+    }
+  }
+}
